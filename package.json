@@ -1,0 +1,16 @@
+{
+  "name": "library-management-api-example",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "5.5.2",
+    "baojs": "^0.2.1",
+    "prisma": "^5.5.2"
+  }
+}
