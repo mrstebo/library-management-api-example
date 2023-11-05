@@ -6,7 +6,8 @@ export async function getBooks(ctx: Context) {
 }
 
 export async function createBook(ctx: Context) {
-  const book = await BookService.createBook(ctx.params as BookService.CreateBookRequest)
+  const body = await ctx.req.json()
+  const book = await BookService.createBook(body as BookService.CreateBookRequest)
 
   return ctx.sendPrettyJson(book);
 }
