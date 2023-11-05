@@ -21,3 +21,11 @@ export async function createBook(book: CreateBookRequest): Promise<Book> {
     data: book,
   });
 }
+
+export async function deleteBook(id: number): Promise<Book | null> {
+  return await prisma.book.delete({
+    where: {
+      id,
+    },
+  });
+}

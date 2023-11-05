@@ -22,3 +22,14 @@ export async function createBook(ctx: Context) {
 
   return ctx.sendPrettyJson(book);
 }
+
+export async function deleteBook(ctx: Context) {
+  const id = Number(ctx.params.id);
+  const book = await BookService.deleteBook(id);
+
+  if (!book) {
+    return ctx.sendText(`Book with id ${id} not found`, { status: 404 });
+  }
+
+  return ctx.sendPrettyJson(book);
+}
